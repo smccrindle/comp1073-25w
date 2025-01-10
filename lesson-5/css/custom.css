@@ -1,0 +1,32 @@
+@charset "utf-8";
+.msgPanel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20rem;
+    background: grey;
+    line-height: 1.5;
+    padding: 2rem;
+    color: #333;
+}
+.msgPanel button {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    font-size: 1.25rem;
+    color: #333;
+    cursor: pointer;
+}
+/* JavaScript classes for interaction */
+.error {
+    background-color: lightcoral;
+}
+.warning {
+    background-color: lightsalmon;
+}
+.default {
+    background-color: lightblue;
+}

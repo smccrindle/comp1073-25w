@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Git and Github | COMP1073 Client-Side JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="css/normalize.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+	<h1>Git and Github</h1>
+	<p>Using a Version Control System (<abbr>VCS</abbr>) to manage your code is an important thing to learn how to do. Git is software that runs on your computer to manage code locally, while Github is a Web application that enables users to host their code in the cloud. Managed code bases are called <em>repositories</em>. Today, we will set up a local repository with Git, and then connect it with a remote repository on Github.</p>
+	<h2>Create a Local Repository</h2>
+	<p>In the Terminal, execute the following commands to create a local code repository:</p>
+	<ol>
+		<li><code>git init</code> (Initializes the current folder as a local repository)</li>
+		<li><code>git add .</code> (Adds or <em>stages</em> all the files and folders in the current directory in preparation to commit)</li>
+		<li><code>git commit -m "[short description here]"</code> (Commits the new files to the repository)</li>
+	</ol>
+	<h2>Create a Remote Repository</h2>
+	<p>Next, we will need to create a remote repository to push the local repository to:</p>
+	<ol>
+		<li>Proceed to <a href="https://github.com/">Github</a> and log in</li>
+		<li>Create a new public or private repository called <code>comp1054-lesson-4</code> or something like that - <strong>don't add a README.md file</strong> - we will do this later</li>
+	</ol>
+	<h2>Push the Local Repository to the Remote</h2>
+	<p>Finally, we need to add the remote repository as the origin for your local repository:</p>
+	<ol>
+		<li>In the VSCode terminal, type <code>git remote add origin https://github.com/[your_username]/[your_repository_name]</code> (the URL ends with <code>.git</code>)</li>
+		<li><code>git branch -M main</code> (sets the current active branch to 'main')</li>
+		<li>Upload the files and folders in your local repository to the remote with <code>git push -u origin main</code></li>
+		<li>Go back to <a href="https://github.com/">Github</a> and refresh the remote repository page to verify the push worked.</li>
+	</ol>
+	<p>Learn more about working with Git at <a href="https://git-scm.com/">https://git-scm.com/</a>.</p>
+</body>
+</html>

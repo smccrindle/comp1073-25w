@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Number Guessing Game | COMP1073 Client-Side JavaScript</title>
+		<link rel="stylesheet" href="css/guess.css" />
+		
+	</head>
+
+	<body>
+		<h1>Number Guessing Game</h1>
+		<p>I have picked a random number between 1 and 100. You have 10 chances to guess the number.</p>
+
+		<!-- Guessing form controls -->
+		<label for="guessField">Enter a guess: </label>
+		<input type="number" id="guessField">
+		<button>Submit guess</button>
+
+		<!-- Elements to contain feedback for user -->
+		<section>
+			<p id="guesses"></p>
+			<p id="lastResult"></p>
+			<p id="lowOrHi"></p>
+		</section>
+
+		<script>
+			// STEP 1: Initialize game variables
+			// STEP 1a: Pick random number
+			
+			// STEP 1b: Create variables to represent the three paragraphs above that will contain user feedback
+			
+
+			// STEP 1c: Create variables to represent the guessing form
+
+
+			// STEP 1d: Create variables to initialize counter for number of guesses
+			
+
+
+			// STEP 2: Put focus on the field that allows user to type in guesses
+			
+
+			// STEP 3: Build a function to check the user's guess
+			
+				// STEP 3b: Create a variable to contain what number the user entered
+				
+				// STEP 3c: If this is the first guess, add some text to the screen as a label for listing previous guesses for reference
+				
+				
+				
+				// STEP 3d: Add the user's current guess to that list, plus a space
+				
+				
+				// STEP 3e: Conditional - the user guessed correctly
+				
+					// Output a success message, then end the game
+					
+					
+					
+					
+				// STEP 3f: Conditional - the user is all out of guesses
+				
+					// Output an appropriate message, then end the game
+					
+					
+				// STEP 3g: Conditional - the user's guess is incorrect
+				
+					// Output an appropriate message
+					
+					
+					// If the guess is too low, let the user know
+					
+					
+					// Else if the guess is too high, let the user know
+					
+					
+				
+				// STEP 3h: Increment the guess count, move focus to the guess field for the next guess, and clear out the old input
+				
+				
+			// STEP 4: Build a function called gameOver() to end the game
+			
+				// STEP 4a: Disable the guessing field and submit button
+				
+				
+				// STEP 4b: Change the textContent of the #lowOrHi paragraph to a short phrase indicating that the game is over, and that the user can start a new game by refreshing the browser page or tab
+				
+			
+			// STEP 3a: Add an event listener for the guess form button that calls the checkGuess function, then test that the event listener is working and that it invokes the function
+			
+			// This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash
+		</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+@charset "utf-8";
+html {
+	font-family: sans-serif;
+	font-size: 250%;
+	text-align: center;
+}
+p em {
+	background-color: lightblue;
+	border: 2px solid darkblue;
+	border-radius: 5px;
+	padding: 0.2em;
+	cursor: pointer;
+}

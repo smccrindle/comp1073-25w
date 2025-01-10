@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Conditionals | COMP1073 Client-Side JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="css/normalize.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+	<script src="js/conditionals.js" defer></script>
+</head>
+
+<body>
+	<h1>Conditionals</h1>
+	<p>Providing the ability for code to execute decisions and run specific pieces of code based on the results is a critical part of any programming language. This week we will look at how to construct conditional statements and decision-making structures.</p>
+	<p></p>
+
+	<label for="weather">Today's weather is…</label>
+	<select id="weather">
+		<option value="">Please choose…</option>
+		<option value="sunny">Sunny</option>
+		<option value="rainy">Rainy</option>
+		<option value="windy">Windy</option>
+	</select>
+
+	<label for="temp">Temperature</label>
+	<input type="number" id="temp" value="15" />
+
+	<button id="weatherButton">Set Weather</button>
+	<p>
+		<img src="images/cloud-off.svg" alt="weather icon" id="weatherIcon" width="50" height="50" />
+	</p>
+	<p id="commentary"></p>
+	<label for="windSpeed">Wind speed</label>
+	<input type="range" min="0" max="100" id="windSpeed" step="25" />
+	<p id="windComment"></p>
+
+	<p id="breakTime"></p>
+</body>
+</html>

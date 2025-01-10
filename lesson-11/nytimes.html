@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Third Party APIs | COMP1073 Client-Side JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="css/normalize.css" rel="stylesheet" />
+	<link href="css/nytimes.css" rel="stylesheet" />
+	<script src="js/nytimes.js" defer></script>
+</head>
+<body>
+	<h1>New York Times API</h1>
+	<p>This example shows how to connect to a <abbr title="REpresentative State Transfer">REST</abbr>ful API. It’s a bit different that what we’ve been doing with other APIs.</p>
+	<div class="wrapper">
+		<div class="controls">
+			<form>
+				<p>
+					<label for="search">Enter a SINGLE search term (required): </label>
+					<input type="text" id="search" class="search" required>
+				</p>
+				<p>
+					<label for="start-date">Start date (format YYYYMMDD): </label>
+					<input type="date" id="start-date" class="start-date" pattern="[0-9]{8}">
+				</p>
+				<p>
+					<label for="end-date">End date (format YYYYMMDD): </label>
+					<input type="date" id="end-date" class="end-date" pattern="[0-9]{8}">
+				</p>
+				<p>
+					<button class="submit">Search</button>
+				</p>
+			</form>
+		</div>
+		<div class="results">
+			<section>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
