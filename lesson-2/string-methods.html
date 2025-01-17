@@ -10,25 +10,34 @@
 	<h1>String Methods</h1>
 	<p>JavaScript output to go here.</p>
     <script>
-        var output = document.querySelector('p');
+        const output = document.querySelector('p');
         
         /* STEP 1: String Length */
-
+        let step1a = "My string.";
+        let step1b = step1a.length;
+        output.textContent = step1b;
 
         /* STEP 2: Retrieving a Specific String Character */
-
-
+        let step2a = step1a[0];
+        console.log(step2a);
+        let step2b = step1a[step1a.length - 1];
+        console.log(step2b);
         /* STEP 3: Extracting Part of a String */
-
+        let step3a = step1a.indexOf("string");
+        console.log(step3a);
+        let step3b = step1a.slice(step3a, 9);
+        console.log(step3b);
         // Note - if the substring is not found within the string, indexOf() returns -1
 
         // Note - if you don't specify where to end the slice, the method returns the rest of the string
 
         /* STEP 4: Changing Case */
-
+        let step4 = step3b.toUpperCase();
+        console.log(step4);
 
         /* STEP 5: Updating Parts of a String */
-        
+        let step5 = step1a.replace("string", "weekend");
+        console.log(step5);
 
     </script>
 </body>
