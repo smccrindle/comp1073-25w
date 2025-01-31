@@ -29,6 +29,12 @@ function setWeather() {
 	/* STEP 2b: Craft an IF/ELSEIF/ELSE that changes the src attribute of the icon element to the appropriate .svg file in the images folder */
 	if (choice === "sunny") {
 		icon.setAttribute("src", "images/sunny.svg");
+		// Check temperature
+		if (temperature >= 15) {
+			page.style.backgroundColor = "orange";
+		} else {
+			page.style.backgroundColor = "lightblue";
+		};
 	} else if (choice === "rainy") {
 		icon.setAttribute("src", "images/rainy.svg");
 	} else if (choice === "windy") {
@@ -40,23 +46,23 @@ function setWeather() {
 
 	/* STEP 4: Logical operators - and, or, not (delete multi-line comment delimiters below) */
 	// STEP 4a: AND - && (It's sunny AND it's at least 15deg)
-/*
-	if () {
+
+	if (choice === "sunny" && temperature >= 15) {
 		comments.textContent = 'It is sunny and warm — time to find your sunglasses!';
 	// STEP 4b: AND, once again - && (It's sunny AND it's less than 15deg)
-	} else if () {
+	} else if (choice === "sunny" && temperature < 15) {
 		comments.textContent = 'It is sunny out there, but it is a bit cool.';
 	// STEP 4c: OR - || (It's windy OR rainy)
-	} else if () {
+	} else if (choice === "windy" || choice === "rainy") {
 		comments.textContent = 'The weather today is a bit unsettled.';
 	} else {
 		comments.textContent = 'You did not specify the type of weather, today.';
 	}
 	// STEP 4d: NOT - ! (It's NOT rainy)
-	if () {
+	if (choice !== "rainy") {
 		comments.textContent += ' No sign of rain.';
 	}
-*/
+
 	// Weather icons by Cole Bemis - https://feathericons.com/, MIT, https://commons.wikimedia.org/w/index.php?curid=60153354
 
 } // End of setWeather() function
@@ -72,28 +78,34 @@ windSpeed.addEventListener('change', getWindSpeed);
 function getWindSpeed() {
 let speed = Number(windSpeed.value);
 // STEP 5a: Build the SWITCH code block
-
-	// STEP 5b: Build out four cases, followed by a default
-
-		// 100 km/h
-		windComment.textContent = speed + 'km/h - Holy schmoly! Hold on to your hat!';
-
-		// 75 km/h
-		windComment.textContent = speed + 'km/h - It\'s a-howling out there!';
-
-		// 50 km/h
-		windComment.textContent = speed + 'km/h - Quite gusty out there, today.';
-
-		// 25 km/h
-		windComment.textContent = speed + 'km/h - A wee bit breezy.';
-
-} // End of getWindSpeed() function
+	switch (speed) {
+		// STEP 5b: Build out four cases, followed by a default
+		case 100:
+			// 100 km/h
+			windComment.textContent = speed + 'km/h - Holy schmoly! Hold on to your hat!';
+			break;
+		case 75:
+			// 75 km/h
+			windComment.textContent = speed + 'km/h - It\'s a-howling out there!';
+			break;
+		case 50:
+			// 50 km/h
+			windComment.textContent = speed + 'km/h - Quite gusty out there, today.';
+			break;
+		case 25:
+			// 25 km/h
+			windComment.textContent = speed + 'km/h - A wee bit breezy.';
+			break;
+		default:
+			windComment.textContent = "As calm as it gets.";
+	};
+}; // End of getWindSpeed() function
 
 
 /* STEP 6: Ternary operator
 This piece of syntax is a bit less typing, but it is harder to read */
 let breakMessage = document.querySelector('#breakTime');
 let coffeeBreak = true;
-
+coffeeBreak ? breakMessage.textContent = "Break time!" : breakMessage.textContent = "Keep working.";
 
 // This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals
