@@ -1,8 +1,14 @@
 const output = document.querySelector('body p:nth-of-type(2)');
 		
 /* STEP 1a: A simple if/else statement */
-let homeWorkDone = null;
-
+let homeWorkDone = false;
+let breakDuration = 0;
+if (homeWorkDone === false) {
+	breakDuration = 10;
+} else {
+	breakDuration = 60;
+};
+output.textContent = `You have earned a ${breakDuration} minute break.`;
 // STEP 1b: Any value that is not false, undefined, null, 0, NaN, or an empty string will evaluate to TRUE when tested using a conditional statement - try a few other values for var homeWorkDone and test
 
 /* STEP 2: The more complex if|elseif|else */
@@ -14,13 +20,22 @@ const weatherButton = document.querySelector('#weatherButton');
 const comments = document.querySelector('#commentary');
 
 /* STEP 2a: Add an event listener for the 'click' event on the 'Set Weather' button that invokes the setWeather() function below */
-
+weatherButton.addEventListener("click", setWeather);
 
 function setWeather() {
+	console.log("setWeather() function called!");
 	let choice = select.value;
 	let temperature = temp.value;
 	/* STEP 2b: Craft an IF/ELSEIF/ELSE that changes the src attribute of the icon element to the appropriate .svg file in the images folder */
-
+	if (choice === "sunny") {
+		icon.setAttribute("src", "images/sunny.svg");
+	} else if (choice === "rainy") {
+		icon.setAttribute("src", "images/rainy.svg");
+	} else if (choice === "windy") {
+		icon.setAttribute("src", "images/windy.svg");
+	} else {
+		icon.setAttribute("src", "images/cloud-off.svg");
+	};
 	/* STEP 3: Add a nested IF/ELSE statement inside the 'sunny' condition above that tests for temperature, and if it is equal to or greater than 15, turn the page background orange, otherwise turn it lightblue */
 
 	/* STEP 4: Logical operators - and, or, not (delete multi-line comment delimiters below) */
