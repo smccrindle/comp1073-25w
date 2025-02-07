@@ -34,7 +34,7 @@ let functionText = "My random number is X.";
 let newFunctionText = functionText.replace("X", random);
 console.log(newFunctionText);
 // Parameters optional
-let lunchArray = ["spicy", "bean", "burrito"];
+let lunchArray = ["spicy", "bean", "taco"];
 let lunch = lunchArray.join();
 console.log(lunch);
 let lunch2 = lunchArray.join(" - ");
