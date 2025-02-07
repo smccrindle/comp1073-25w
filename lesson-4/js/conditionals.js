@@ -57,11 +57,12 @@ function setWeather() {
 		comments.textContent = 'The weather today is a bit unsettled.';
 	} else {
 		comments.textContent = 'You did not specify the type of weather, today.';
-	}
+	};
+
 	// STEP 4d: NOT - ! (It's NOT rainy)
 	if (choice !== "rainy") {
 		comments.textContent += ' No sign of rain.';
-	}
+	};
 
 	// Weather icons by Cole Bemis - https://feathericons.com/, MIT, https://commons.wikimedia.org/w/index.php?curid=60153354
 
