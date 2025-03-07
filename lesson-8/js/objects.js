@@ -1,7 +1,19 @@
 const output = document.getElementById('output');
 
 /* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), then open this page in a browser and enter 'person' in the console */
-
+const person = {
+    name: {
+        first: "Scott",
+        last: "McCrindle"
+    },
+    age: 53,
+    gender: "male",
+    interests: ["skiing", "programming", "jazz"],
+    greeting() {
+        let greeting = `Hi, my name is ${this.name.first} ${this.name.last} and I am ${this.age} years old. One of my interests is ${this.interests[2]}.`;
+        return greeting;
+    }
+};
 
 /* STEP 2a: Add other data items to the above object, like name, age, gender, and interests */
 
@@ -30,23 +42,45 @@ const output = document.getElementById('output');
 
 
 /* STEP 7: You can also use bracket notation, just like an array - objects that are built this way are often referred to as associative arrays */
-
+output.textContent = `${person["name"]["first"]} ${person["name"]["last"]} is my name.`;
 
 /* STEP 8a: You can also set members of an object - try changing the person's name, and age */
+person.name.first = "James";
+person.age = 50;
 
 /* STEP 8b: Bracket notation allows you to dynamically refer to property names. Create a function below that accepts a property name as an argument, then console.log() that property value. Try it out! */
-
+function logProperty(propName) {
+    console.log(person[propName]);
+}
 
 /* STEP 9a: It it also possible to add new members to an object. Type person.eyes = "YOUR_EYE_COLOUR_HERE" into the console - and then type person.eyes */
-
+person.eyeColor = "green";
 
 /* STEP 9b: Add a new function called 'goodbye' to the person object and try it by typing person.goodbye into the console */
-
+person.goodbye = function() {
+    let goodbye = `${this.name.first} says goodbye!`;
+    return goodbye;
+};
 
 /* STEP 10: We can also dynamically set both names and values for objects (using bracket syntax)… */
-
+const dataName = "height";
+const dataValue = "1.7m";
+person[dataName] = dataValue;
 
 /* STEP 11a: 'this' is very useful - it allows us to refer to the object in question, specifically. This will become much clearer later in the course. Create two new objects, each with a name, and a function that outputs the name */
+const person1 = {
+    name: "Jane",
+    introduceSelf() {
+        console.log(`Hi, I am ${this.name}.`);
+    }
+};
+
+const person2 = {
+    name: "Bob",
+    introduceSelf() {
+        console.log(`Hi, I am ${this.name}.`);
+    }
+};
 
 
 /* STEP 11b: Call up both person1.hello() and person2.hello() in the console to see how 'this' is specific to each object */
