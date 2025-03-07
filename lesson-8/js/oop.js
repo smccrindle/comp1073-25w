@@ -38,7 +38,8 @@ function Album(name, artist, year, numTracks) {
 
 
 /* STEP 3b: Instantiate a new Album (or 2) based on the above constructor */
-
+const album1 = new Album("Disintegration", "The Cure", 1989, 12);
+const album2 = new Album("Substance", "New Order", 1987, 24);
 
 /* STEP 3c: Attempt to access the various properties of album2 or album3 using the console. */
 // album2['name']
@@ -52,7 +53,7 @@ function Album(name, artist, year, numTracks) {
 /* STEP 4a: Modify the describe method of the above Album constructor so that it returns a string. */
 
 /* STEP 4b: Capture the description of one of the album objects and set it as the text for the paragraph on the page (see line 1 of this script). */
-
+output.textContent = album2.describe();
 
 // That's it! Now on to the Lab...
 
