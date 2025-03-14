@@ -1,8 +1,18 @@
 const output = document.querySelector('#output');
 
 /* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), then open this page in a browser and enter 'Coffee' in the console */
-
+function Coffee(size, isDecaf, qtyCream, qtySugar) {
+    this.size = size;
+    // this.isDecaf = isDecaf;
+    this.decaf = (isDecaf === true ? "decaffeinated" : "caffeinated");
+    this.qtyCream = qtyCream;
+    this.qtySugar = qtySugar;
+    this.description = function() {
+        output.textContent = `A ${this.size} ${this.decaf} coffee with ${this.qtyCream} creamers and ${this.qtySugar} teaspoons of sugar.`;
+    }
+};
 /* STEP 2: Instatiate a coffee based on the above constructor function */
+let scottsCoffee = new Coffee("extra large", false, 2, 1);
 
 /* STEP 3: Refresh the page, and in the console, begin to call a method on scottsCoffee by typing 'scottsCoffee.' - look at all the members and methods */
 
@@ -15,12 +25,16 @@ const output = document.querySelector('#output');
 /* STEP 5c: EVERYTHING is an object in JavaScript. Try accessing the prototype property of Coffee (which even though it is a constructor function it is still an object) with Coffee.prototype in the console. Then try Object.Prototype */
 
 /* STEP 6a: Let's circle back to create() - use scottsCoffee to create a new object instance - one based on scottsCoffee. */
+let megansCoffee = Object.create(scottsCoffee);
+megansCoffee.qtyCream = 1;
+megansCoffee.isDecaf = true;
 
 /* STEP 6b: See how this new object inherits from the prototype with richsCoffee.__proto__ in the console. */
 
 /* STEP 7a: Each constructor function includes a prototype property with a value equal to an object that contains a constructor property. Try it out by typing scottsCoffee.constructor and richsCoffee.constructor */
 
 /* STEP 7b: Since constructor is also a function, you can use it to create a new object instance - try it! */
+let lukesCoffee = new megansCoffee.constructor("medium", true, 2, 2);
 
 /* STEP 7c: Attempt via the console to access the new object's properties - kathysCoffee.size, kathysCoffee.isDecaf, etc. */
 
@@ -29,7 +43,9 @@ const output = document.querySelector('#output');
 /* STEP 7e: The constructor has other features - try using it to discover the name of an instance's constructor by typing kathysCoffee.constructor.name into the console. */
 
 /* STEP 8a: We can modify the prototype property of a constructor function - let's add another method to Coffee */
-
+Coffee.prototype.thanks = function() {
+    output.textContent = `Thanks for a ${this.size} coffee.`;
+}
 // What's really interesting about the above code is that every instance based on the Coffee constructor has been updated due to prototypical inheritance!
 
 /* STEP 8b: Now let's call up this method on one or more of our Coffee instances from the console (scottsCoffee, richsCoffee, or kathysCoffee). */
