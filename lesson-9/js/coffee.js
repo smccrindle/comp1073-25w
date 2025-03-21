@@ -46,6 +46,9 @@ class Coffee {
                 cupSize = "125";
         };
         cup.setAttribute("height", cupSize);
+        // Set the title of the IMG element to be a description
+        let description = `A ${this.size} ${decaf} coffee`;
+        cup.setAttribute("title", description);
         // Insert IMG of coffee cup into page
         output.appendChild(cup);
     }
@@ -61,8 +64,21 @@ let stevesCoffee = new Coffee("small", false);
 /* STEP 4: Call up the serveIt() method */
 
 /* STEP 5: Define a subclass of the Coffee class */
-
+class Latte extends Coffee {
+    // Class properties
+    milkType;
+    // Class constructor
+    constructor(size, isDecaf, milkType) {
+        super(size, isDecaf);
+        this.milkType = milkType;
+    };
+    // Class methods
+    latteDesc() {
+        alert(`A ${this.size} ${this.isDecaf ? "decaffeinated" : "caffeinated"} latte with steamed ${this.milkType} milk.`);
+    };
+};
 /* STEP 6: Create a new instance of the Latte object */
+let scottsLatte = new Latte("medium", false, "almond");
 
 /* STEP 7: Call up the latteDesc() method for the above created Latte instance */
 
